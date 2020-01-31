@@ -529,7 +529,7 @@ DECLARE_FUNC(yespowerLITB){
      SET_BUFFER_RETURN(output, 32);
 }
 
-DECLARE_FUNC(yespowerIOTS){
+DECLARE_FUNC(yespower_IOTS){
     DECLARE_SCOPE;
 
      if (args.Length() < 1)
@@ -712,7 +712,7 @@ DECLARE_INIT(init) {
     NODE_SET_METHOD(exports, "yespower_0_5_R32", yespower_0_5_R32);
     NODE_SET_METHOD(exports, "yespowerLITB", yespowerLITB);
     NODE_SET_METHOD(exports, "yespowerRES", yespowerRES);
-    NODE_SET_METHOD(exports, "yespowerIOTS", yespowerIOTS);
+    NODE_SET_METHOD(exports, "yespower_IOTS", yespower_IOTS);
     NODE_SET_METHOD(exports, "cpupower", cpupower);
     NODE_SET_METHOD(exports, "sugarchain", sugarchain);
     NODE_SET_METHOD(exports, "ltncg", ltncg);
