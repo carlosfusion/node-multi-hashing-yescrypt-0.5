@@ -508,6 +508,90 @@ DECLARE_FUNC(yespower_0_5_R32){
     SET_BUFFER_RETURN(output, 32);
 }
 
+DECLARE_FUNC(yespowerLITB){
+    DECLARE_SCOPE;
+
+     if (args.Length() < 1)
+        RETURN_EXCEPT("You must provide one argument.");
+
+     Local<Object> target = args[0]->ToObject();
+
+     if(!Buffer::HasInstance(target))
+        RETURN_EXCEPT("Argument should be a buffer object.");
+
+
+     char * input = Buffer::Data(target);
+    char output[32];
+
+
+     yespowerLITB_hash(input, output);
+
+     SET_BUFFER_RETURN(output, 32);
+}
+
+DECLARE_FUNC(yespowerIOTS){
+    DECLARE_SCOPE;
+
+     if (args.Length() < 1)
+        RETURN_EXCEPT("You must provide one argument.");
+
+     Local<Object> target = args[0]->ToObject();
+
+     if(!Buffer::HasInstance(target))
+        RETURN_EXCEPT("Argument should be a buffer object.");
+
+
+     char * input = Buffer::Data(target);
+    char output[32];
+
+
+     yespowerIOTS_hash(input, output);
+
+     SET_BUFFER_RETURN(output, 32);
+}
+
+DECLARE_FUNC(yespowerRES){
+    DECLARE_SCOPE;
+
+     if (args.Length() < 1)
+        RETURN_EXCEPT("You must provide one argument.");
+
+     Local<Object> target = args[0]->ToObject();
+
+     if(!Buffer::HasInstance(target))
+        RETURN_EXCEPT("Argument should be a buffer object.");
+
+
+     char * input = Buffer::Data(target);
+    char output[32];
+
+
+     yespowerRES_hash(input, output);
+
+     SET_BUFFER_RETURN(output, 32);
+}
+
+DECLARE_FUNC(cpupower){
+    DECLARE_SCOPE;
+
+    if (args.Length() < 1)
+        RETURN_EXCEPT("You must provide one argument.");
+
+    Local<Object> target = args[0]->ToObject();
+
+    if(!Buffer::HasInstance(target))
+        RETURN_EXCEPT("Argument should be a buffer object.");
+
+
+    char * input = Buffer::Data(target);
+    char output[32];
+
+
+    cpupower_hash(input, output);
+
+    SET_BUFFER_RETURN(output, 32);
+}
+
 DECLARE_FUNC(sugarchain){
     DECLARE_SCOPE;
 
@@ -626,6 +710,10 @@ DECLARE_INIT(init) {
     NODE_SET_METHOD(exports, "yespower_0_5_R16", yespower_0_5_R16);
     NODE_SET_METHOD(exports, "yespower_0_5_R24", yespower_0_5_R24);
     NODE_SET_METHOD(exports, "yespower_0_5_R32", yespower_0_5_R32);
+    NODE_SET_METHOD(exports, "yespowerLITB", yespowerLITB);
+    NODE_SET_METHOD(exports, "yespowerRES", yespowerRES);
+    NODE_SET_METHOD(exports, "yespowerIOTS", yespowerIOTS);
+    NODE_SET_METHOD(exports, "cpupower", cpupower);
     NODE_SET_METHOD(exports, "sugarchain", sugarchain);
     NODE_SET_METHOD(exports, "ltncg", ltncg);
     NODE_SET_METHOD(exports, "yescrypt", yescrypt);
