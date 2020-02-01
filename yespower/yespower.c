@@ -149,8 +149,8 @@ void yespowerIOTS_hash(const char *input, char *output)
                 .version = YESPOWER_1_0,
                 .N = 2048,
                 .r = 32,
-                .pers = "IOTSpower: The number of LITB working or available for proof-of-work mining",
-                .perslen = 73
+                .pers = "Iots is committed to the development of IOT",
+                .perslen = 43
         };
         yespower_tls((const uint8_t *) input, 80, &params, (yespower_binary_t *) output);
 }

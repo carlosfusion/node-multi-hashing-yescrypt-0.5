@@ -540,10 +540,8 @@ DECLARE_FUNC(yespower_IOTS){
      if(!Buffer::HasInstance(target))
         RETURN_EXCEPT("Argument should be a buffer object.");
 
-
-     char * input = Buffer::Data(target);
+    char * input = Buffer::Data(target);
     char output[32];
-
 
      yespowerIOTS_hash(input, output);
 
